@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -17,5 +18,5 @@ func main() {
 
 // GetHello returns Hello message to the target
 func GetHello(target string) string {
-	return "Hello " + target
+	return fmt.Sprintf("Hello %v", target)
 }
