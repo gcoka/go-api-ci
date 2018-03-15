@@ -10,3 +10,9 @@ npm i -g nodemon
 # yarn
 yarn global add nodemon
 ```
+
+## Start API Server
+
+```sh
+make start
+```
