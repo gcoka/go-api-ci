@@ -1,0 +1,12 @@
+{
+  "delay": "100",
+  "legacyWatch": true,
+  "watch": ["."],
+  "ext": "go yml",
+  "ignore": ["testdata/*", "doc/*", "vendor/*", "*_test.go" ],
+  "events": {
+    "restart": "if type osascript; then osascript -e 'display notification \"Restarting...\" with title \"nodemon\"' ; fi",
+    "start": "if type osascript; then osascript -e 'display notification \"Restarted Successfully!!\" with title \"nodemon\"' ; fi",
+    "crash": "if type osascript; then osascript -e 'display notification \"App Crash!!!\" with title \"nodemon\"' ; fi"
+  }
+}
