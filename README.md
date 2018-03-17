@@ -11,22 +11,20 @@ npm i -g nodemon
 yarn global add nodemon
 ```
 
-## Getting Start
+## Getting Started
 
-1.  Execute `make dep` command
-
-```sh
-$ make dep
-```
-
-2.  Start the server
+ Run `make dep` command
 
 ```sh
-$ make start
+make dep
 ```
 
-3.  Accessing the browser on port 3000
+Start the server
 
+```sh
+make start
 ```
-localhost:3000
-```
+
+Access localhost on port 3000
+
+<localhost:3000>
