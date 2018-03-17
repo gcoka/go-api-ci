@@ -1,0 +1,18 @@
+{
+  "name": "sample-docker-custom-image-project",
+  "source": {
+    "type": "S3",
+    "location": "codebuild-region-ID-account-ID-input-bucket/DockerCustomImageSample.zip"
+  },
+  "artifacts": {
+    "type": "NO_ARTIFACTS"
+  },
+  "environment": {
+    "type": "LINUX_CONTAINER",
+    "image": "docker:dind",
+    "computeType": "BUILD_GENERAL1_SMALL",
+    "privilegedMode": true
+  },
+  "serviceRole": "arn:aws:iam::account-ID:role/role-name",
+  "encryptionKey": "arn:aws:kms:region-ID:account-ID:key/key-ID"
+}

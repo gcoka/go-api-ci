@@ -1,6 +1,10 @@
 # go-api-ci
 
-## Install
+![codebuild](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiK3BCTGJmdzFRYW5rZjdyN0dVMzhySStMQU5DQ0crZ0d1UFEwLzFyc3V0ekxlbmNLTmJFbXpiblFRWW5WZll5QUNJdUZiaFYyRUJKakhmZXRGN2toaEZrPSIsIml2UGFyYW1ldGVyU3BlYyI6IlpCWVBFbG16SmhMYnNUZ0YiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
+## Setup
+
+### Install tools
 
 install `nodemon` command for live reloading
 
@@ -10,6 +14,11 @@ npm i -g nodemon
 # yarn
 yarn global add nodemon
 ```
+
+### AWS CodeBuild
+
+Follow this article.
+<https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker-custom-image.html>
 
 ## Getting Started
 
