@@ -3,8 +3,6 @@ version: 0.2
 env:
   variables:
     IMAGE_REPO_NAME: go-api-ci
-    AWS_DEFAULT_REGION: us-east-1
-    AWS_ACCOUNT_ID: 598003641956
     IMAGE_TAG: latest
 
 phases:
