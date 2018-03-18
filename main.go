@@ -10,7 +10,7 @@ import (
 func main() {
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
-		msg := GetHello("nodemon!!!!")
+		msg := GetHello("nodemon 2!!!!")
 		fmt.Println(msg)
 		c.String(http.StatusOK, msg)
 	})
