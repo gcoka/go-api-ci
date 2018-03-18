@@ -1,5 +1,12 @@
 version: 0.2
 
+env:
+  variables:
+    IMAGE_REPO_NAME: go-api-ci
+    AWS_DEFAULT_REGION: us-east-1
+    AWS_ACCOUNT_ID: 598003641956
+    IMAGE_TAG: latest
+
 phases:
   install:
     commands:
@@ -7,8 +14,15 @@ phases:
       - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"
   pre_build:
     commands:
-      - docker build -t helloworld .
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
     commands:
-      - docker images
-      - docker run helloworld echo "Hello, World!" 
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG

@@ -6,7 +6,7 @@
 
 ### Install tools
 
-install `nodemon` command for live reloading
+install `nodemon` command for live reloading.
 
 ```sh
 # npm
@@ -20,20 +20,28 @@ yarn global add nodemon
 Follow this article.
 <https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker-custom-image.html>
 
+### AWS ECR
+
+1. create repository.
+    `aws ecr create-repository --repository-name go-api-ci --region us-east-1 --profile xxxx`
+
+2. Follow this article.
+    <https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html>
+
 ## Getting Started
 
- Run `make dep` command
+ Run `make dep` command.
 
 ```sh
 make dep
 ```
 
-Start the server
+Start the server.
 
 ```sh
 make start
 ```
 
-Access localhost on port 3000
+Access localhost on port 3000.
 
 <localhost:3000>
