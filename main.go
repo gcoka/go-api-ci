@@ -15,6 +15,11 @@ func main() {
 		c.String(http.StatusOK, msg)
 	})
 
+	// health check
+	r.GET("/ping", func(c *gin.Context) {
+		c.String(http.StatusOK, "pong")
+	})
+
 	r.Run(":3000")
 }
 
