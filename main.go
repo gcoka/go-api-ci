@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -20,7 +21,12 @@ func main() {
 		c.String(http.StatusOK, "pong")
 	})
 
-	r.Run(":3000")
+	port := "3000"
+	if p, ok := os.LookupEnv("PORT"); ok {
+		port = p
+	}
+
+	r.Run(fmt.Sprintf(":%v", port))
 }
 
 // GetHello returns Hello message to the target
