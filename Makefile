@@ -10,3 +10,10 @@ dep:
 
 ecr-repository:
 	aws ecr create-repository --repository-name go-api-ci2 --region us-east-1
+
+build-image:
+	docker build -t gcoka/goapi .
+
+push-image:
+	docker push gcoka/goapi
+
