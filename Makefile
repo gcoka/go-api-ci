@@ -1,8 +1,9 @@
 EXE_NAME=goapi
+BUILD_CMD_LOCAL=go build -o $(EXE_NAME) main.go
 
 .PHONY: start
 start:
-	nodemon -x "pkill $(EXE_NAME) & (go build -v -o $(EXE_NAME) main.go || exit 1) && ./$(EXE_NAME)"
+	nodemon -x "pkill $(EXE_NAME) & ($(BUILD_CMD_LOCAL) || exit 1) && (./$(EXE_NAME) || exit 1)"
 
 .PHONY: dep
 dep:

@@ -1,8 +1,8 @@
 {
   "delay": "100",
   "legacyWatch": true,
-  "watch": ["."],
-  "ext": "go yml",
+  "watch": [".", "Makefile"],
+  "ext": "go yml json toml",
   "ignore": ["testdata/*", "doc/*", "vendor/*", "*_test.go" ],
   "events": {
     "restart": "if type osascript; then osascript -e 'display notification \"Restarting...\" with title \"nodemon\"' ; fi",
