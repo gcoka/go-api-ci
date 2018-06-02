@@ -20,3 +20,5 @@
 # Output
 go-api-ci
 goapi
+
+codebuild-local/
