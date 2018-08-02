@@ -15,4 +15,5 @@ FROM alpine
 
 COPY --from=builder /tmp/goapi /opt/api/goapi
 ENV GIN_MODE=release
+ENV PORT=80
 CMD ["/opt/api/goapi"]
